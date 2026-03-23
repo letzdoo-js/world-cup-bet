@@ -1,0 +1,241 @@
+{
+  "version": "1.0",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Le terminal, Internet et ton premier programme",
+      "pillars": ["réseau", "outils", "code"],
+      "missions": [
+        {
+          "id": "w1m1",
+          "title": "Découvre ton terminal",
+          "pillar": "outils",
+          "xp": 25,
+          "description": "Ouvre un terminal et explore les commandes de base",
+          "steps": [
+            "Ouvre VS Code → Terminal → New Terminal",
+            "Tape `ls` (ou `dir` sur Windows) — ça liste les fichiers",
+            "Tape `cd` pour changer de dossier, `mkdir` pour en créer un",
+            "Tape `echo 'Salut le monde'` — le terminal répète ce que tu dis",
+            "Tape `cat` sur un fichier texte pour voir son contenu"
+          ],
+          "validation": "Envoie une capture d'écran de ton terminal avec les commandes",
+          "hint": "Le terminal c'est comme parler directement à ton ordinateur, sans interface graphique. Chaque commande est un petit programme."
+        },
+        {
+          "id": "w1m2",
+          "title": "Ping le monde",
+          "pillar": "réseau",
+          "xp": 30,
+          "description": "Comprends comment ton ordi communique avec Internet",
+          "steps": [
+            "Tape `ping google.com` — observe le temps de réponse en millisecondes",
+            "Tape `ping 8.8.8.8` — c'est le serveur DNS de Google, directement par IP",
+            "Compare les temps : lequel est plus rapide ? Pourquoi ?",
+            "Tape `nslookup google.com` — tu vois le DNS en action !"
+          ],
+          "validation": "Dis-moi : c'est quoi la différence entre google.com et 8.8.8.8 ? Pourquoi on utilise des noms au lieu d'IP ?",
+          "hint": "DNS = Domain Name System. C'est l'annuaire d'Internet. Tu tapes un nom, il te donne l'adresse IP."
+        },
+        {
+          "id": "w1m3",
+          "title": "Parle à un serveur",
+          "pillar": "réseau",
+          "xp": 30,
+          "description": "Utilise curl pour envoyer des requêtes HTTP",
+          "steps": [
+            "Tape `curl https://api.github.com` — tu reçois du JSON",
+            "Tape `curl -v https://api.github.com` — le -v montre TOUT (headers, TLS...)",
+            "Tape `curl -I https://google.com` — les headers seulement",
+            "Tape `curl -I https://google.com/nimportequoi` — observe le status code"
+          ],
+          "validation": "C'est quoi la différence entre un status 200 et un 404 ?",
+          "hint": "HTTP c'est le langage du web. GET = demander quelque chose. 200 = OK. 404 = pas trouvé. Les headers c'est l'enveloppe, le body c'est la lettre."
+        },
+        {
+          "id": "w1m4",
+          "title": "Hello Python",
+          "pillar": "code",
+          "xp": 25,
+          "description": "Ton premier programme Python",
+          "steps": [
+            "Vérifie que Python est installé : `python --version`",
+            "Crée un fichier `hello.py`",
+            "Écris : print('Bienvenue sur World Cup Bet !')",
+            "Lance-le : `python hello.py`",
+            "Modifie-le pour demander le prénom de l'utilisateur avec `input()`"
+          ],
+          "validation": "Envoie-moi ton code. Il doit demander un prénom et afficher un message personnalisé.",
+          "hint": "print() affiche du texte. input() attend que l'utilisateur tape quelque chose. Tu peux stocker le résultat dans une variable : `name = input('Ton prénom ? ')`"
+        },
+        {
+          "id": "w1m5",
+          "title": "Premier push GitHub",
+          "pillar": "outils",
+          "xp": 35,
+          "description": "Envoie ton code sur GitHub — le monde peut le voir",
+          "steps": [
+            "Dans ton dossier projet : `git init`",
+            "Crée un fichier `.gitignore` avec `__pycache__/` dedans",
+            "`git add .` — ajoute tous les fichiers au 'staging area'",
+            "`git commit -m 'Premier commit : hello world'`",
+            "Connecte à GitHub et `git push`"
+          ],
+          "validation": "Envoie-moi le lien de ton repo GitHub. Je veux voir le commit !",
+          "hint": "Git c'est comme un journal de bord. Chaque commit = une photo de ton code à un instant T. GitHub = le cloud où tu stockes ce journal."
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "title": "Données, structures et comment un ordi pense",
+      "pillars": ["code", "réseau", "outils"],
+      "missions": [
+        {
+          "id": "w2m1",
+          "title": "Les équipes dans une liste",
+          "pillar": "code",
+          "xp": 25,
+          "description": "Organise les 48 équipes de la Coupe du Monde en Python",
+          "steps": [
+            "Crée `teams.py`",
+            "Crée une liste `groups` qui contient 12 groupes (A à L)",
+            "Chaque groupe est un dictionnaire avec un nom et une liste d'équipes",
+            "Affiche les équipes du groupe de la France avec une boucle for"
+          ],
+          "validation": "Ton script doit afficher toutes les équipes d'un groupe au choix",
+          "hint": "Un dictionnaire c'est comme un vrai dictionnaire : tu cherches un mot (la clé) et tu trouves sa définition (la valeur). `groups['A']` te donne les équipes du groupe A."
+        },
+        {
+          "id": "w2m2",
+          "title": "Conditions et logique",
+          "pillar": "code",
+          "xp": 25,
+          "description": "Ajoute de la logique : chercher une équipe, filtrer des résultats",
+          "steps": [
+            "Écris une fonction `find_team(name)` qui retourne le groupe d'une équipe",
+            "Gère le cas où l'équipe n'existe pas (retourne None ou un message)",
+            "Écris `is_in_same_group(team1, team2)` qui dit si deux équipes sont dans le même groupe"
+          ],
+          "validation": "Teste tes fonctions avec au moins 3 cas différents (trouvé, pas trouvé, même groupe, pas même groupe)",
+          "hint": "if/elif/else c'est comme un aiguillage de train. Le programme prend un chemin différent selon la condition."
+        },
+        {
+          "id": "w2m3",
+          "title": "JSON — le langage des machines",
+          "pillar": "données",
+          "xp": 30,
+          "description": "Lis et écris des fichiers JSON",
+          "steps": [
+            "Crée `teams.json` avec toutes les équipes et groupes",
+            "Modifie `teams.py` pour LIRE le fichier JSON au lieu d'avoir les données dans le code",
+            "Ajoute un champ 'ranking' FIFA à chaque équipe",
+            "Sauvegarde les modifications dans le JSON"
+          ],
+          "validation": "Montre-moi que tu peux lire, modifier et sauvegarder du JSON. Pourquoi c'est mieux que d'écrire les données dans le code ?",
+          "hint": "JSON = JavaScript Object Notation. C'est juste du texte structuré. `import json` → `json.load()` pour lire, `json.dump()` pour écrire."
+        },
+        {
+          "id": "w2m4",
+          "title": "HTTP en profondeur",
+          "pillar": "réseau",
+          "xp": 30,
+          "description": "Comprends les méthodes HTTP et les DevTools",
+          "steps": [
+            "Ouvre un site web → F12 → onglet Network",
+            "Recharge la page — observe TOUTES les requêtes",
+            "Clique sur une requête — lis les headers, le status, le body",
+            "Avec curl, teste GET vs POST : `curl -X POST https://httpbin.org/post -d '{\"name\": \"test\"}'`"
+          ],
+          "validation": "Explique-moi la différence entre GET et POST. Donne un exemple de quand on utilise chacun.",
+          "hint": "GET = demander des données (lire). POST = envoyer des données (créer). Comme la différence entre lire un livre et écrire une lettre."
+        },
+        {
+          "id": "w2m5",
+          "title": "Git branching",
+          "pillar": "outils",
+          "xp": 25,
+          "description": "Travaille avec des branches Git",
+          "steps": [
+            "Crée une branche : `git checkout -b feature/teams`",
+            "Fais tes modifications sur cette branche",
+            "Commit et push : `git push origin feature/teams`",
+            "Va sur GitHub et crée une Pull Request",
+            "Demande à ton père de la reviewer !"
+          ],
+          "validation": "Envoie-moi le lien de ta Pull Request sur GitHub",
+          "hint": "Une branche c'est un univers parallèle de ton code. Tu peux expérimenter sans casser la version principale (main). La PR c'est la demande de fusionner ton univers avec le principal."
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "title": "Ton PC devient un serveur",
+      "pillars": ["code", "réseau", "infra"],
+      "missions": [
+        {
+          "id": "w3m1",
+          "title": "FastAPI — ton premier serveur",
+          "pillar": "code",
+          "xp": 35,
+          "description": "Transforme ton PC en serveur web",
+          "steps": [
+            "Installe FastAPI : `uv add fastapi uvicorn`",
+            "Crée `main.py` avec une route GET /",
+            "Lance : `uvicorn main:app --reload`",
+            "Ouvre `http://localhost:8000` dans ton navigateur",
+            "Ouvre `http://localhost:8000/docs` — la doc auto !"
+          ],
+          "validation": "Ton serveur tourne. Ouvre /docs et teste la route. C'est quoi localhost ? C'est quoi le 8000 ?",
+          "hint": "localhost = ton propre PC. 8000 = le numéro de port (comme un numéro d'appartement dans un immeuble). uvicorn = le programme qui fait tourner ton serveur."
+        },
+        {
+          "id": "w3m2",
+          "title": "Des vraies routes API",
+          "pillar": "code",
+          "xp": 30,
+          "description": "Crée des routes qui retournent des données utiles",
+          "steps": [
+            "Crée GET `/api/teams` qui retourne toutes les équipes (depuis le JSON)",
+            "Crée GET `/api/teams/{group}` qui retourne un groupe spécifique",
+            "Crée GET `/api/teams/search?name=fra` qui cherche une équipe",
+            "Teste chaque route avec curl ET dans le navigateur"
+          ],
+          "validation": "Montre-moi les 3 routes qui fonctionnent. Teste avec curl et montre les réponses JSON.",
+          "hint": "Un path parameter c'est `/teams/{group}` — la valeur est dans l'URL. Un query parameter c'est `/teams/search?name=fra` — c'est après le `?`."
+        },
+        {
+          "id": "w3m3",
+          "title": "Comprendre le déploiement",
+          "pillar": "infra",
+          "xp": 40,
+          "description": "Déploie ton API pour que le monde entier y accède",
+          "steps": [
+            "D'abord comprends : 'déployer' = copier ton code sur un serveur qui tourne 24/7",
+            "Railway/Fly.io = une entreprise qui te prête un serveur",
+            "Crée un compte Railway, connecte ton repo GitHub",
+            "Configure : Railway détecte Python, installe les deps, lance uvicorn",
+            "Observe les build logs — chaque ligne t'explique ce qui se passe"
+          ],
+          "validation": "Ton API est accessible sur une URL publique. Envoie-moi l'URL, je la teste ! Et explique-moi ce que Railway fait exactement quand tu push du code.",
+          "hint": "Quand tu push sur GitHub, Railway détecte le changement, télécharge ton code, installe les dépendances (uv sync), et lance ton serveur. C'est comme si quelqu'un allumait un PC, installait ton code, et le laissait tourner."
+        },
+        {
+          "id": "w3m4",
+          "title": "Premier lien partageable",
+          "pillar": "réseau",
+          "xp": 25,
+          "description": "Comprends le chemin complet d'une requête",
+          "steps": [
+            "Envoie ton URL Railway à un ami",
+            "Demande-lui d'ouvrir dans son navigateur",
+            "Pendant qu'il le fait, regarde les logs Railway — tu vois SA requête !",
+            "Retrace le chemin : son navigateur → DNS → IP Railway → ton serveur → réponse"
+          ],
+          "validation": "Dessine le chemin complet d'une requête de ton ami vers ton serveur. Chaque étape.",
+          "hint": "C'est le moment magique : quelqu'un à l'autre bout du monde tape une URL et ton code Python s'exécute pour lui répondre. C'est ça, le web."
+        }
+      ]
+    }
+  ]
+}
