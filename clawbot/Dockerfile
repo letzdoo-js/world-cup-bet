@@ -6,14 +6,9 @@ RUN pip install --no-cache-dir nanobot-ai
 ENV NANOBOT_DIR=/root/.nanobot
 RUN mkdir -p "$NANOBOT_DIR/workspace/skills"
 
-# Copy skills
+# Copy skills (baked into image)
 COPY skills/clawbot-tutor/ $NANOBOT_DIR/workspace/skills/clawbot-tutor/
 COPY skills/clawbot-quiz/  $NANOBOT_DIR/workspace/skills/clawbot-quiz/
 
-# Copy workspace files (curriculum + progress)
-COPY workspace/curriculum.json $NANOBOT_DIR/workspace/
-COPY workspace/progress.json   $NANOBOT_DIR/workspace/
-
-# Config is mounted at runtime via -v
-# Default command
+# Workspace data (curriculum, progress) is mounted via docker-compose
 CMD ["nanobot", "gateway"]

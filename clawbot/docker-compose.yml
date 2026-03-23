@@ -1,0 +1,11 @@
+services:
+  clawbot:
+    build: .
+    container_name: clawbot
+    restart: unless-stopped
+    volumes:
+      - ./config.json:/root/.nanobot/config.json:ro
+      - world-cup-bet-workspace:/root/.nanobot/workspace
+
+volumes:
+  world-cup-bet-workspace:
