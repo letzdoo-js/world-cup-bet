@@ -23,7 +23,8 @@
         "python.defaultInterpreterPath": "/usr/local/bin/python",
         "editor.formatOnSave": true,
         "editor.fontSize": 15,
-        "terminal.integrated.fontSize": 14
+        "terminal.integrated.fontSize": 14,
+        "workbench.colorTheme": "Default Dark Modern"
       }
     }
   }
