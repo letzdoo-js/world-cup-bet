@@ -37,3 +37,26 @@ async def health():
 #
 # Semaine 3, Mission 2 :
 #   Ajoute GET /api/teams/{group} → équipes d'un groupe
+# ----- À TOI DE JOUER ! -----
+@app.get("/api/hello/{name}")
+async def hello_name(name: str):
+    return {"message": f"Salut name"}
+# Données des groupes Coupe du Monde 2026
+groups = {
+    "A": ["Mexique", "Afrique du Sud", "Corée du Sud", "Tchéquie"],
+    "B": ["Canada", "Bosnie-Herzégovine", "Qatar", "Suisse"],
+    "C": ["Brésil", "Maroc", "Haïti", "Écosse"],
+    "D": ["Etas Unis", "Paraguay", "Australie", "Turquie"],
+    "E": ["France", "Italie", "Japon", "Nouvelle-Zélande"],
+    "F": ["Espagne", "Allemagne", "Croatie", "Costa Rica"],
+    "G": ["Argentine", "Angleterre", "Belgique", "Colombie"],
+    "H": ["Portugal", "Pays-Bas", "Pologne", "Mexique"],
+    "I": ["Uruguay", "Danemark", "Suède", "Norvège"],
+    "J": ["Pérou", "Chili", "Équateur", "Venezuela"],
+    "K": ["Nigeria", "Ghana", "Sénégal", "Cameroun"],
+    "L": ["Arabie Saoudite", "Iran", "Irak", "Jordanie"]}
+
+
+@app.get("/api/teams/{group}")
+async def afficher_groupe(group: str):
+    return {"teams": groups[group]}
